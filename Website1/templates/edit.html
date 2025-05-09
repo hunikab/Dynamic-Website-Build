@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Edit Person</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body class="container mt-4">
+    <h2>Edit Person</h2>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="mb-3">{{ form.name.label }} {{ form.name(class="form-control") }}</div>
+      <div class="mb-3">{{ form.address.label }} {{ form.address(class="form-control") }}</div>
+      <div class="mb-3">{{ form.email.label }} {{ form.email(class="form-control") }}</div>
+      <div class="mb-3">{{ form.phone.label }} {{ form.phone(class="form-control") }}</div>
+      {{ form.submit(class="btn btn-primary") }}
+      <a href="{{ url_for('index') }}" class="btn btn-secondary">Back</a>
+    </form>
+  </body>
+</html>
